@@ -86,8 +86,8 @@ namespace VikingAxeBoardProject
 
             Color colorOfClicked = GetPixelColor(MousePosition.X * 3 / 2, MousePosition.Y * 3 / 2);
             //tuuuu.Location = this.PointToClient(Cursor.Position);
-            int centerX = previewBoardImage.Width / 2 + previewBoardImage.Location.X - 5,
-                centerY = previewBoardImage.Width / 2 + previewBoardImage.Location.Y - 5;
+            int centerX = previewBoardImage.Width / 2 + previewBoardImage.Location.X,
+                centerY = previewBoardImage.Width / 2 + previewBoardImage.Location.Y;
 
             double vectorX = centerX - this.PointToClient(Cursor.Position).X,
                 vectorY = centerY - this.PointToClient(Cursor.Position).Y;
@@ -101,16 +101,26 @@ namespace VikingAxeBoardProject
             double twoPointRadius = (double)(previewBoardImage.Width) / 2.0 * 96 / 122;
             double onePointRadius = (double)(previewBoardImage.Width) / 2.0 * 1;
 
-            if (lengthFromCenter <= sixPointRadius && colorOfClicked != Color.Black)
-                MessageBox.Show("6!");
-            else if(lengthFromCenter <= fourPointRadius) 
-                MessageBox.Show("4!");
+            //if (lengthFromCenter <= sixPointRadius)
+            //    MessageBox.Show("6!");
+            //else if(lengthFromCenter <= fourPointRadius) 
+            //    MessageBox.Show("4!");
+            //else if (lengthFromCenter <= threePointRadius)
+            //    MessageBox.Show("3!");
+            //else if (lengthFromCenter <= twoPointRadius)
+            //    MessageBox.Show("2!");
+            //else if (lengthFromCenter <= onePointRadius)
+            //    MessageBox.Show("1!");
+            if (lengthFromCenter <= sixPointRadius)
+                dataLabel.Text = "6!";
+            else if (lengthFromCenter <= fourPointRadius)
+                dataLabel.Text = "4!";
             else if (lengthFromCenter <= threePointRadius)
-                MessageBox.Show("3!");
+                dataLabel.Text = "3!";
             else if (lengthFromCenter <= twoPointRadius)
-                MessageBox.Show("2!");
+                dataLabel.Text = "2!";
             else if (lengthFromCenter <= onePointRadius)
-                MessageBox.Show("1!");
+                dataLabel.Text = "1!";
 
 
 
@@ -144,11 +154,201 @@ namespace VikingAxeBoardProject
         {
             tabsControl.SelectedTab = previewBoardTab;
         }
-        int boardSize = 500;
-        int boardPositionX = 
+
+        private int boardSize = 500;
+        private int boardPositionX = 371;
+        private int boardPositionY = 78;
+
+        Color boardColor = Color.Black;
+
+        private void updatePreviewBoardLook()
+        {
+            boardSize = int.Parse(widthBoardTextBox.Text);
+            boardPositionX = int.Parse(PositionXBoardTextBox.Text);
+            boardPositionY = int.Parse(PositionYBoardTextBox.Text);
+            switch (colorBoardListBox.SelectedItem)
+            {
+                case "Black":
+                    boardColor = Color.Black;
+                    break;
+                case "Violet":
+                    boardColor = Color.Violet;
+                    break;
+                case "Blue":
+                    boardColor = Color.Blue;
+                    break;
+                case "Yellow":
+                    boardColor = Color.Yellow;
+                    break;
+                case "Green":
+                    boardColor = Color.Green;
+                    break;
+                case "Grey":
+                    boardColor = Color.Gray;
+                    break;
+
+            }
+
+            previewBoardImage.Width = boardSize;
+            previewBoardImage.Height = boardSize;
+
+            Point location = new Point(boardPositionX, boardPositionY);
+            previewBoardImage.Location = location;
+
+            previewBoardImage.BackColor = boardColor;
+        }
+
+        private void saveBoardSettingsButton_Click(object sender, EventArgs e)
+        {
+            boardSize = int.Parse(widthBoardTextBox.Text);
+            boardPositionX = int.Parse(PositionXBoardTextBox.Text);
+            boardPositionY = int.Parse(PositionYBoardTextBox.Text);
+            switch(colorBoardListBox.SelectedItem)
+            {
+                case "Black":
+                    boardColor = Color.Black;
+                    break;
+                case "Violet":
+                    boardColor = Color.Violet;
+                    break;
+                case "Blue":
+                    boardColor = Color.Blue;
+                    break;
+                case "Yellow":
+                    boardColor = Color.Yellow;
+                    break;
+                case "Green":
+                    boardColor = Color.Green;
+                    break;
+                case "Grey":
+                    boardColor = Color.Gray;
+                    break;
+
+            }
+            updatePreviewBoardLook();
+        }
+
         private void widthBoardTextBox_TextChanged(object sender, EventArgs e)
         {
+            heightBoardTextBox.Text = widthBoardTextBox.Text;
+            updatePreviewBoardLook();
+        }
+        private void heightBoardTextBox_TextChanged(object sender, EventArgs e)
+        {
+            widthBoardTextBox.Text = heightBoardTextBox.Text;
+            updatePreviewBoardLook();
+        }
 
+        private void addPositionXButton_Click(object sender, EventArgs e)
+        {
+            PositionXBoardTextBox.Text = (int.Parse(PositionXBoardTextBox.Text) + 5).ToString();
+        }
+
+        private void substractPositionXButton_Click(object sender, EventArgs e)
+        {
+            PositionXBoardTextBox.Text = (int.Parse(PositionXBoardTextBox.Text) - 5).ToString();
+        }
+
+        private void addPositionYButton_Click(object sender, EventArgs e)
+        {
+            PositionYBoardTextBox.Text = (int.Parse(PositionYBoardTextBox.Text) + 5).ToString();
+        }
+
+        private void substractPositionYButton_Click(object sender, EventArgs e)
+        {
+            PositionYBoardTextBox.Text = (int.Parse(PositionYBoardTextBox.Text) - 5).ToString();
+        }
+
+        private void PositionXBoardTextBox_TextChanged(object sender, EventArgs e)
+        {
+            updatePreviewBoardLook();
+        }
+
+        private void PositionYBoardTextBox_TextChanged(object sender, EventArgs e)
+        {
+            updatePreviewBoardLook();
+        }
+
+        private void previewBoardImage_MouseEnter(object sender, EventArgs e)
+        {
+            Color colorOfClicked = GetPixelColor(MousePosition.X * 3 / 2, MousePosition.Y * 3 / 2);
+            //tuuuu.Location = this.PointToClient(Cursor.Position);
+            int centerX = previewBoardImage.Width / 2 + previewBoardImage.Location.X,
+                centerY = previewBoardImage.Width / 2 + previewBoardImage.Location.Y;
+
+            double vectorX = centerX - this.PointToClient(Cursor.Position).X,
+                vectorY = centerY - this.PointToClient(Cursor.Position).Y;
+
+            //MessageBox.Show(string.Format("X: {0} Y: {1}", vectorX, vectorY));
+
+            double lengthFromCenter = Math.Sqrt(vectorX * vectorX + vectorY * vectorY);
+            double sixPointRadius = (double)(previewBoardImage.Width) / 2.0 * 18 / 122;
+            double fourPointRadius = (double)(previewBoardImage.Width) / 2.0 * 44 / 122;
+            double threePointRadius = (double)(previewBoardImage.Width) / 2.0 * 70 / 122;
+            double twoPointRadius = (double)(previewBoardImage.Width) / 2.0 * 96 / 122;
+            double onePointRadius = (double)(previewBoardImage.Width) / 2.0 * 1;
+
+            //if (lengthFromCenter <= sixPointRadius)
+            //    MessageBox.Show("6!");
+            //else if(lengthFromCenter <= fourPointRadius) 
+            //    MessageBox.Show("4!");
+            //else if (lengthFromCenter <= threePointRadius)
+            //    MessageBox.Show("3!");
+            //else if (lengthFromCenter <= twoPointRadius)
+            //    MessageBox.Show("2!");
+            //else if (lengthFromCenter <= onePointRadius)
+            //    MessageBox.Show("1!");
+            if (lengthFromCenter <= sixPointRadius)
+                dataLabel.Text = "6!";
+            else if (lengthFromCenter <= fourPointRadius)
+                dataLabel.Text = "4!";
+            else if (lengthFromCenter <= threePointRadius)
+                dataLabel.Text = "3!";
+            else if (lengthFromCenter <= twoPointRadius)
+                dataLabel.Text = "2!";
+            else if (lengthFromCenter <= onePointRadius)
+                dataLabel.Text = "1!";
+        }
+
+        private void previewBoardImage_MouseMove(object sender, MouseEventArgs e)
+        {
+            Color colorOfClicked = GetPixelColor(MousePosition.X * 3 / 2, MousePosition.Y * 3 / 2);
+            //tuuuu.Location = this.PointToClient(Cursor.Position);
+            int centerX = previewBoardImage.Width / 2 + previewBoardImage.Location.X,
+                centerY = previewBoardImage.Width / 2 + previewBoardImage.Location.Y;
+
+            double vectorX = centerX - this.PointToClient(Cursor.Position).X,
+                vectorY = centerY - this.PointToClient(Cursor.Position).Y;
+
+            //MessageBox.Show(string.Format("X: {0} Y: {1}", vectorX, vectorY));
+
+            double lengthFromCenter = Math.Sqrt(vectorX * vectorX + vectorY * vectorY);
+            double sixPointRadius = (double)(previewBoardImage.Width) / 2.0 * 18 / 122;
+            double fourPointRadius = (double)(previewBoardImage.Width) / 2.0 * 44 / 122;
+            double threePointRadius = (double)(previewBoardImage.Width) / 2.0 * 70 / 122;
+            double twoPointRadius = (double)(previewBoardImage.Width) / 2.0 * 96 / 122;
+            double onePointRadius = (double)(previewBoardImage.Width) / 2.0 * 1;
+
+            //if (lengthFromCenter <= sixPointRadius)
+            //    MessageBox.Show("6!");
+            //else if(lengthFromCenter <= fourPointRadius) 
+            //    MessageBox.Show("4!");
+            //else if (lengthFromCenter <= threePointRadius)
+            //    MessageBox.Show("3!");
+            //else if (lengthFromCenter <= twoPointRadius)
+            //    MessageBox.Show("2!");
+            //else if (lengthFromCenter <= onePointRadius)
+            //    MessageBox.Show("1!");
+            if (lengthFromCenter <= sixPointRadius)
+                dataLabel.Text = "6!";
+            else if (lengthFromCenter <= fourPointRadius)
+                dataLabel.Text = "4!";
+            else if (lengthFromCenter <= threePointRadius)
+                dataLabel.Text = "3!";
+            else if (lengthFromCenter <= twoPointRadius)
+                dataLabel.Text = "2!";
+            else if (lengthFromCenter <= onePointRadius)
+                dataLabel.Text = "1!";
         }
     }
 }

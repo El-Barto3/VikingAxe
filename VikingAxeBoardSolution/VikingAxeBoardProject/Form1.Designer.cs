@@ -36,9 +36,12 @@ namespace VikingAxeBoardProject
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.previewBoardTab = new System.Windows.Forms.TabPage();
+            this.dataLabel = new System.Windows.Forms.Label();
             this.boardSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.maximalizeSettingsButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.colorBoardListBox = new System.Windows.Forms.ListBox();
             this.label16 = new System.Windows.Forms.Label();
             this.minimalizeSettingButton = new System.Windows.Forms.Button();
             this.substractPositionYButton = new System.Windows.Forms.Button();
@@ -50,7 +53,7 @@ namespace VikingAxeBoardProject
             this.label11 = new System.Windows.Forms.Label();
             this.PositionXBoardTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.saveBoardSettingsButton = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.heightBoardTextBox = new System.Windows.Forms.TextBox();
             this.widthBoardTextBox = new System.Windows.Forms.TextBox();
@@ -148,6 +151,7 @@ namespace VikingAxeBoardProject
             // 
             // previewBoardTab
             // 
+            this.previewBoardTab.Controls.Add(this.dataLabel);
             this.previewBoardTab.Controls.Add(this.boardSettingsGroupBox);
             this.previewBoardTab.Controls.Add(this.previewBoardImage);
             this.previewBoardTab.Location = new System.Drawing.Point(4, 22);
@@ -158,10 +162,20 @@ namespace VikingAxeBoardProject
             this.previewBoardTab.Text = "Preview Board";
             this.previewBoardTab.UseVisualStyleBackColor = true;
             // 
+            // dataLabel
+            // 
+            this.dataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dataLabel.Location = new System.Drawing.Point(979, 63);
+            this.dataLabel.Name = "dataLabel";
+            this.dataLabel.Size = new System.Drawing.Size(98, 47);
+            this.dataLabel.TabIndex = 23;
+            // 
             // boardSettingsGroupBox
             // 
+            this.boardSettingsGroupBox.Controls.Add(this.button2);
+            this.boardSettingsGroupBox.Controls.Add(this.button1);
             this.boardSettingsGroupBox.Controls.Add(this.maximalizeSettingsButton);
-            this.boardSettingsGroupBox.Controls.Add(this.listBox1);
+            this.boardSettingsGroupBox.Controls.Add(this.colorBoardListBox);
             this.boardSettingsGroupBox.Controls.Add(this.label16);
             this.boardSettingsGroupBox.Controls.Add(this.minimalizeSettingButton);
             this.boardSettingsGroupBox.Controls.Add(this.substractPositionYButton);
@@ -173,7 +187,7 @@ namespace VikingAxeBoardProject
             this.boardSettingsGroupBox.Controls.Add(this.label11);
             this.boardSettingsGroupBox.Controls.Add(this.PositionXBoardTextBox);
             this.boardSettingsGroupBox.Controls.Add(this.label13);
-            this.boardSettingsGroupBox.Controls.Add(this.button6);
+            this.boardSettingsGroupBox.Controls.Add(this.saveBoardSettingsButton);
             this.boardSettingsGroupBox.Controls.Add(this.label14);
             this.boardSettingsGroupBox.Controls.Add(this.heightBoardTextBox);
             this.boardSettingsGroupBox.Controls.Add(this.widthBoardTextBox);
@@ -182,10 +196,29 @@ namespace VikingAxeBoardProject
             this.boardSettingsGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.boardSettingsGroupBox.Name = "boardSettingsGroupBox";
             this.boardSettingsGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.boardSettingsGroupBox.Size = new System.Drawing.Size(590, 360);
+            this.boardSettingsGroupBox.Size = new System.Drawing.Size(590, 318);
             this.boardSettingsGroupBox.TabIndex = 22;
             this.boardSettingsGroupBox.TabStop = false;
             this.boardSettingsGroupBox.Text = "Ustawienia";
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(339, 118);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(38, 42);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "<";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(534, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 42);
+            this.button1.TabIndex = 46;
+            this.button1.Text = ">";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // maximalizeSettingsButton
             // 
@@ -199,26 +232,26 @@ namespace VikingAxeBoardProject
             this.maximalizeSettingsButton.Visible = false;
             this.maximalizeSettingsButton.Click += new System.EventHandler(this.maximalizeSettingsButton_Click);
             // 
-            // listBox1
+            // colorBoardListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.colorBoardListBox.FormattingEnabled = true;
+            this.colorBoardListBox.Items.AddRange(new object[] {
             "Black",
             "Violet",
             "Blue",
             "Yellow",
             "Green",
-            "Grey"});
-            this.listBox1.Location = new System.Drawing.Point(137, 171);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(82, 17);
-            this.listBox1.TabIndex = 44;
+            "Gray"});
+            this.colorBoardListBox.Location = new System.Drawing.Point(137, 171);
+            this.colorBoardListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.colorBoardListBox.Name = "colorBoardListBox";
+            this.colorBoardListBox.Size = new System.Drawing.Size(82, 17);
+            this.colorBoardListBox.TabIndex = 44;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(87, 175);
+            this.label16.Location = new System.Drawing.Point(102, 172);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(31, 13);
@@ -227,7 +260,7 @@ namespace VikingAxeBoardProject
             // 
             // minimalizeSettingButton
             // 
-            this.minimalizeSettingButton.Location = new System.Drawing.Point(407, 305);
+            this.minimalizeSettingButton.Location = new System.Drawing.Point(420, 275);
             this.minimalizeSettingButton.Margin = new System.Windows.Forms.Padding(2);
             this.minimalizeSettingButton.Name = "minimalizeSettingButton";
             this.minimalizeSettingButton.Size = new System.Drawing.Size(76, 23);
@@ -245,6 +278,7 @@ namespace VikingAxeBoardProject
             this.substractPositionYButton.TabIndex = 40;
             this.substractPositionYButton.Text = "-";
             this.substractPositionYButton.UseVisualStyleBackColor = true;
+            this.substractPositionYButton.Click += new System.EventHandler(this.substractPositionYButton_Click);
             // 
             // addPositionYButton
             // 
@@ -255,6 +289,7 @@ namespace VikingAxeBoardProject
             this.addPositionYButton.TabIndex = 39;
             this.addPositionYButton.Text = "+";
             this.addPositionYButton.UseVisualStyleBackColor = true;
+            this.addPositionYButton.Click += new System.EventHandler(this.addPositionYButton_Click);
             // 
             // substractPositionXButton
             // 
@@ -265,6 +300,7 @@ namespace VikingAxeBoardProject
             this.substractPositionXButton.TabIndex = 38;
             this.substractPositionXButton.Text = "-";
             this.substractPositionXButton.UseVisualStyleBackColor = true;
+            this.substractPositionXButton.Click += new System.EventHandler(this.substractPositionXButton_Click);
             // 
             // addPositionXButton
             // 
@@ -275,15 +311,16 @@ namespace VikingAxeBoardProject
             this.addPositionXButton.TabIndex = 37;
             this.addPositionXButton.Text = "+";
             this.addPositionXButton.UseVisualStyleBackColor = true;
+            this.addPositionXButton.Click += new System.EventHandler(this.addPositionXButton_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Black;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(325, 39);
+            this.pictureBox3.Location = new System.Drawing.Point(382, 71);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(233, 212);
+            this.pictureBox3.Size = new System.Drawing.Size(147, 136);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;
@@ -295,12 +332,13 @@ namespace VikingAxeBoardProject
             this.PositionYBoardTextBox.Name = "PositionYBoardTextBox";
             this.PositionYBoardTextBox.Size = new System.Drawing.Size(48, 20);
             this.PositionYBoardTextBox.TabIndex = 34;
-            this.PositionYBoardTextBox.Text = "950";
+            this.PositionYBoardTextBox.Text = "78";
+            this.PositionYBoardTextBox.TextChanged += new System.EventHandler(this.PositionYBoardTextBox_TextChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(98, 142);
+            this.label11.Location = new System.Drawing.Point(119, 143);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 13);
@@ -314,32 +352,34 @@ namespace VikingAxeBoardProject
             this.PositionXBoardTextBox.Name = "PositionXBoardTextBox";
             this.PositionXBoardTextBox.Size = new System.Drawing.Size(48, 20);
             this.PositionXBoardTextBox.TabIndex = 32;
-            this.PositionXBoardTextBox.Text = "950";
+            this.PositionXBoardTextBox.Text = "371";
+            this.PositionXBoardTextBox.TextChanged += new System.EventHandler(this.PositionXBoardTextBox_TextChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(98, 109);
+            this.label13.Location = new System.Drawing.Point(119, 110);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(14, 13);
             this.label13.TabIndex = 31;
             this.label13.Text = "X";
             // 
-            // button6
+            // saveBoardSettingsButton
             // 
-            this.button6.Location = new System.Drawing.Point(495, 305);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(64, 23);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "Zapisz";
-            this.button6.UseVisualStyleBackColor = true;
+            this.saveBoardSettingsButton.Location = new System.Drawing.Point(508, 275);
+            this.saveBoardSettingsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.saveBoardSettingsButton.Name = "saveBoardSettingsButton";
+            this.saveBoardSettingsButton.Size = new System.Drawing.Size(64, 23);
+            this.saveBoardSettingsButton.TabIndex = 30;
+            this.saveBoardSettingsButton.Text = "Zapisz";
+            this.saveBoardSettingsButton.UseVisualStyleBackColor = true;
+            this.saveBoardSettingsButton.Click += new System.EventHandler(this.saveBoardSettingsButton_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(187, 71);
+            this.label14.Location = new System.Drawing.Point(188, 79);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(12, 13);
@@ -348,27 +388,28 @@ namespace VikingAxeBoardProject
             // 
             // heightBoardTextBox
             // 
-            this.heightBoardTextBox.Location = new System.Drawing.Point(202, 70);
+            this.heightBoardTextBox.Location = new System.Drawing.Point(202, 76);
             this.heightBoardTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.heightBoardTextBox.Name = "heightBoardTextBox";
             this.heightBoardTextBox.Size = new System.Drawing.Size(48, 20);
             this.heightBoardTextBox.TabIndex = 28;
-            this.heightBoardTextBox.Text = "100";
+            this.heightBoardTextBox.Text = "500";
+            this.heightBoardTextBox.TextChanged += new System.EventHandler(this.heightBoardTextBox_TextChanged);
             // 
             // widthBoardTextBox
             // 
-            this.widthBoardTextBox.Location = new System.Drawing.Point(137, 70);
+            this.widthBoardTextBox.Location = new System.Drawing.Point(137, 76);
             this.widthBoardTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.widthBoardTextBox.Name = "widthBoardTextBox";
             this.widthBoardTextBox.Size = new System.Drawing.Size(48, 20);
             this.widthBoardTextBox.TabIndex = 27;
-            this.widthBoardTextBox.Text = "100";
+            this.widthBoardTextBox.Text = "500";
             this.widthBoardTextBox.TextChanged += new System.EventHandler(this.widthBoardTextBox_TextChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(87, 71);
+            this.label15.Location = new System.Drawing.Point(86, 79);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(47, 13);
@@ -383,10 +424,12 @@ namespace VikingAxeBoardProject
             this.previewBoardImage.Margin = new System.Windows.Forms.Padding(0);
             this.previewBoardImage.Name = "previewBoardImage";
             this.previewBoardImage.Size = new System.Drawing.Size(500, 500);
-            this.previewBoardImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.previewBoardImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.previewBoardImage.TabIndex = 21;
             this.previewBoardImage.TabStop = false;
             this.previewBoardImage.Click += new System.EventHandler(this.previewBoardImage_Click);
+            this.previewBoardImage.MouseEnter += new System.EventHandler(this.previewBoardImage_MouseEnter);
+            this.previewBoardImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.previewBoardImage_MouseMove);
             // 
             // playersTab
             // 
@@ -687,7 +730,7 @@ namespace VikingAxeBoardProject
         private System.Windows.Forms.TabPage previewBoardTab;
         private System.Windows.Forms.GroupBox boardSettingsGroupBox;
         private System.Windows.Forms.Button maximalizeSettingsButton;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox colorBoardListBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button minimalizeSettingButton;
         private System.Windows.Forms.Button substractPositionYButton;
@@ -699,7 +742,7 @@ namespace VikingAxeBoardProject
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox PositionXBoardTextBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button saveBoardSettingsButton;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox heightBoardTextBox;
         private System.Windows.Forms.TextBox widthBoardTextBox;
@@ -728,6 +771,9 @@ namespace VikingAxeBoardProject
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button calibrateButton;
         private System.Windows.Forms.TabControl tabsControl;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label dataLabel;
     }
 }
 
