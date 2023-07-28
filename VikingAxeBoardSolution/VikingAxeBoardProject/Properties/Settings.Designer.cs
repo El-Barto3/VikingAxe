@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System.Drawing;
 
 namespace VikingAxeBoardProject.Properties
 {
@@ -25,5 +25,66 @@ namespace VikingAxeBoardProject.Properties
                 return defaultInstance;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public int boardSize
+        {
+            get
+            {
+                return ((int)(this["boardSize"]));
+            }
+            set
+            {
+                this["boardSize"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("750")]
+        public int boardPositionX
+        {
+            get
+            {
+                return ((int)(this["boardPositionX"]));
+            }
+            set
+            {
+                this["boardPositionX"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public int boardPositionY
+        {
+            get
+            {
+                return ((int)(this["boardPositionY"]));
+            }
+            set
+            {
+                this["boardPositionY"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public Color boardColor
+        {
+            get
+            {
+                return ((Color)(this["boardColor"]));
+            }
+            set
+            {
+                this["boardColor"] = value;
+            }
+        }
     }
+
 }
