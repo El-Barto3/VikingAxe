@@ -43,7 +43,7 @@ namespace VikingAxeBoardProject.Properties
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("750")]
+        [global::System.Configuration.DefaultSettingValueAttribute("620")]
         public int boardPositionX
         {
             get
@@ -58,7 +58,7 @@ namespace VikingAxeBoardProject.Properties
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        [global::System.Configuration.DefaultSettingValueAttribute("280")]
         public int boardPositionY
         {
             get

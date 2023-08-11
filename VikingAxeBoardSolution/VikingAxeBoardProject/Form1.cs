@@ -207,17 +207,19 @@ namespace VikingAxeBoardProject
         private int rounds = 10;
         private int currentRound = 1;
         private int playerTurn = 0;
-        private int[] playerPoints = new int[4];
-        private string[] playerName = new string[4];
+        private int[] playerPoints = new int[5];
+        private string[] playerName = new string[5];
 
         private void updateScoreBoard()
         {
             playerNameLabel1.Text = playerName[0];
-            playerNameLabel2.Text = playerName[1];
-
             playerPointsLabel1.Text = playerPoints[0].ToString();
-            playerPointsLabel2.Text = playerPoints[1].ToString();
 
+            if(playerCount>1)
+            {
+                playerNameLabel2.Text = playerName[1];
+                playerPointsLabel2.Text = playerPoints[1].ToString();
+            }
             if (playerCount>2)
             {
                 playerNameLabel3.Text = playerName[2];
@@ -228,8 +230,13 @@ namespace VikingAxeBoardProject
                 playerNameLabel4.Text = playerName[3];
                 playerPointsLabel4.Text = playerPoints[3].ToString();
             }
+            if (playerCount > 4)
+            {
+                playerNameLabel5.Text = playerName[4];
+                playerPointsLabel5.Text = playerPoints[4].ToString();
+            }
 
-            if(currentRound <= rounds)
+            if (currentRound <= rounds)
                 currentRoundLabel.Text = currentRound.ToString();
 
             for(int i=0;i<playerCount;i++)
@@ -242,6 +249,8 @@ namespace VikingAxeBoardProject
                 rounds = int.Parse(maxRoundsTextBox.Text);
             
             allRoundsLabel.Text = rounds.ToString();
+
+            playerTurnLabel.Text = playerName[currentPlayer];
         }
 
         private void resetGame()
@@ -254,7 +263,7 @@ namespace VikingAxeBoardProject
 
         private void startGameOne()
         {
-            if (playerCount >= 2)
+            if (playerCount >= 1)
             {
                 tabsControl.SelectedTab = playOneTab;
                 updateBoardLook(playBoardImage);
@@ -460,6 +469,7 @@ namespace VikingAxeBoardProject
             playerName[1] = playerNameTextBox2.Text;
             playerName[2] = playerNameTextBox3.Text;
             playerName[3] = playerNameTextBox4.Text;
+            playerName[4] = playerNameTextBox5.Text;
 
             playerCount = 0;
             for (int i = 0; i < playerName.Length; i++)
@@ -467,6 +477,7 @@ namespace VikingAxeBoardProject
                 if (playerName[i] != "")
                     playerCount++;
             }
+            tabsControl.SelectedTab = playTab;
 
         }
         int currentPlayer = 0;
@@ -474,7 +485,10 @@ namespace VikingAxeBoardProject
         {
             if (currentRound <= rounds)
             {
-                playerPoints[currentPlayer] += detectPointOnBoard(playBoardImage);
+                var points = detectPointOnBoard(playBoardImage);
+                playerPoints[currentPlayer] += points;
+                lastMove = points;
+                lastMovePlayer = currentPlayer;
                 if (currentPlayer + 1 < playerCount)
                     currentPlayer++;
                 else
@@ -513,8 +527,14 @@ namespace VikingAxeBoardProject
             gameOverPanel.Visible = false;
             tabsControl.SelectedTab = mainTab;
         }
-        int typeBoard = 0;
 
+        private void resetGameButton_Click(object sender, EventArgs e)
+        {
+            gameOverPanel.Visible = false;
+            startGameOne();
+        }
+
+        int typeBoard = 0;
         private void checkTypeBoard()
         {
             if (typeBoard == -1)
@@ -576,6 +596,9 @@ namespace VikingAxeBoardProject
 
         private void changeTTTBox(Control controlBox, int index)
         {
+            TTTlastMove = controlBox;
+            TTTlastMoveIndex = index;
+
             if (TTTplayerTurnCross)
             {
                 if (boxesValue[index] < 1)
@@ -601,7 +624,23 @@ namespace VikingAxeBoardProject
             }
 
         }
+        private void changeTTTBoxWhenMiss()
+        {
+            TTTlastMove = null;
+            TTTlastMoveIndex = 0;
 
+            if (TTTplayerTurnCross)
+            {
+                TTTplayerTurnCross = false;
+            }
+            else
+            {
+                TTTplayerTurnCross = true;
+            }
+            uploadTTTBoard();
+            uploadTTTPlayer();
+
+        }
         private void TTTBox1_Click(object sender, EventArgs e)
         {
             changeTTTBox(TTTBox1, 0);
@@ -657,5 +696,88 @@ namespace VikingAxeBoardProject
         {
             resetTTTGame();
         }
+        private void TTTNextRoundButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //system cofania w TTT ewentualnie do poprawy
+        Control TTTlastMove;
+        int TTTlastMoveIndex = 0;
+        private void TTTRevertMoveButton_Click(object sender, EventArgs e)
+        {
+            if (TTTlastMove != null)
+                changeTTTBox(TTTlastMove, TTTlastMoveIndex);
+            else
+                changeTTTBoxWhenMiss();
+        }
+        private void TTTMissButton_Click(object sender, EventArgs e)
+        {
+            changeTTTBoxWhenMiss();
+        }
+
+
+        //TTT - end
+        private void missButton_Click(object sender, EventArgs e)
+        {
+            if (currentRound <= rounds)
+            {
+                //miss
+                playerPoints[currentPlayer] += 0;
+                if (currentPlayer + 1 < playerCount)
+                    currentPlayer++;
+                else
+                {
+                    currentPlayer = 0;
+                    if (currentRound <= rounds)
+                        currentRound++;
+                    if (currentRound > rounds)
+                    {
+                        bool biggest = true;
+                        gameOverPanel.Visible = true;
+                        for (int i = 0; i < playerPoints.Length; i++)
+                        {
+                            biggest = true;
+                            for (int j = 0; j < playerPoints.Length; j++)
+                            {
+                                if (playerPoints[i] < playerPoints[j])
+                                    biggest = false;
+
+                            }
+                            if (biggest)
+                                winnerLabel.Text = playerName[i];
+                        }
+
+                    }
+                }
+
+                updateScoreBoard();
+            }
+
+        }
+
+        //do poprawy ewentualnej system cofania
+
+        int lastMove = 0;
+        int lastMovePlayer = 0;
+        private void revertMoveButton_Click(object sender, EventArgs e)
+        {
+            playerPoints[lastMovePlayer] -= lastMove;
+            if (currentPlayer - 1 >= 0)
+                currentPlayer--;
+            else
+            {
+                if (currentRound > 0)
+                {
+                    currentPlayer = playerCount - 1;
+                    currentRound -= 1;
+                }
+            }
+
+            updateScoreBoard();
+        }
+
+
     }
 }

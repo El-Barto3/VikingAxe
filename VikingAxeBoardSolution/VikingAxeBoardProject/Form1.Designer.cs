@@ -31,6 +31,13 @@ namespace VikingAxeBoardProject
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VikingAxeProject));
             this.playTwoTab = new System.Windows.Forms.TabPage();
+            this.TTTNextRoundButton = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.TTTScoreCrossLabel = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.TTTScoreCircleLabel = new System.Windows.Forms.Label();
+            this.TTTRevertMoveButton = new System.Windows.Forms.Button();
+            this.TTTMissButton = new System.Windows.Forms.Button();
             this.TTTBoardPanel = new System.Windows.Forms.Panel();
             this.TTTgameOverPanel = new System.Windows.Forms.Panel();
             this.TTTgameOverExitButton = new System.Windows.Forms.Button();
@@ -51,7 +58,10 @@ namespace VikingAxeBoardProject
             this.TTTplayerTurnLabel = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.playOneTab = new System.Windows.Forms.TabPage();
+            this.revertMoveButton = new System.Windows.Forms.Button();
+            this.missButton = new System.Windows.Forms.Button();
             this.gameOverPanel = new System.Windows.Forms.Panel();
+            this.resetGameButton = new System.Windows.Forms.Button();
             this.gameOverExitButton = new System.Windows.Forms.Button();
             this.winnerLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -61,6 +71,8 @@ namespace VikingAxeBoardProject
             this.currentRoundLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.scoreBoardGroupBox = new System.Windows.Forms.GroupBox();
+            this.playerNameLabel5 = new System.Windows.Forms.Label();
+            this.playerPointsLabel5 = new System.Windows.Forms.Label();
             this.playerNameLabel4 = new System.Windows.Forms.Label();
             this.playerPointsLabel4 = new System.Windows.Forms.Label();
             this.playerNameLabel3 = new System.Windows.Forms.Label();
@@ -99,6 +111,8 @@ namespace VikingAxeBoardProject
             this.dataLabel = new System.Windows.Forms.Label();
             this.previewBoardImage = new System.Windows.Forms.PictureBox();
             this.playersTab = new System.Windows.Forms.TabPage();
+            this.playerNameTextBox5 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.savePlayersButton = new System.Windows.Forms.Button();
             this.playerNameTextBox4 = new System.Windows.Forms.TextBox();
             this.playerNameTextBox3 = new System.Windows.Forms.TextBox();
@@ -151,17 +165,103 @@ namespace VikingAxeBoardProject
             // 
             // playTwoTab
             // 
+            this.playTwoTab.Controls.Add(this.TTTNextRoundButton);
+            this.playTwoTab.Controls.Add(this.label24);
+            this.playTwoTab.Controls.Add(this.TTTScoreCrossLabel);
+            this.playTwoTab.Controls.Add(this.label23);
+            this.playTwoTab.Controls.Add(this.TTTScoreCircleLabel);
+            this.playTwoTab.Controls.Add(this.TTTRevertMoveButton);
+            this.playTwoTab.Controls.Add(this.TTTMissButton);
             this.playTwoTab.Controls.Add(this.TTTBoardPanel);
             this.playTwoTab.Controls.Add(this.TTTNewGameButton);
             this.playTwoTab.Controls.Add(this.TTTplayerTurnLabel);
             this.playTwoTab.Controls.Add(this.label21);
             this.playTwoTab.Location = new System.Drawing.Point(4, 22);
-            this.playTwoTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playTwoTab.Margin = new System.Windows.Forms.Padding(2);
             this.playTwoTab.Name = "playTwoTab";
             this.playTwoTab.Size = new System.Drawing.Size(1920, 1087);
             this.playTwoTab.TabIndex = 7;
             this.playTwoTab.Text = "Tic Tac Toe Game";
             this.playTwoTab.UseVisualStyleBackColor = true;
+            // 
+            // TTTNextRoundButton
+            // 
+            this.TTTNextRoundButton.Location = new System.Drawing.Point(1118, 53);
+            this.TTTNextRoundButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TTTNextRoundButton.Name = "TTTNextRoundButton";
+            this.TTTNextRoundButton.Size = new System.Drawing.Size(91, 26);
+            this.TTTNextRoundButton.TabIndex = 52;
+            this.TTTNextRoundButton.Text = "Następna runda";
+            this.TTTNextRoundButton.UseVisualStyleBackColor = true;
+            this.TTTNextRoundButton.Click += new System.EventHandler(this.TTTNextRoundButton_Click);
+            // 
+            // label24
+            // 
+            this.label24.CausesValidation = false;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label24.Location = new System.Drawing.Point(907, 79);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(62, 20);
+            this.label24.TabIndex = 51;
+            this.label24.Text = "Krzyżyk";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TTTScoreCrossLabel
+            // 
+            this.TTTScoreCrossLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TTTScoreCrossLabel.CausesValidation = false;
+            this.TTTScoreCrossLabel.Location = new System.Drawing.Point(907, 103);
+            this.TTTScoreCrossLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TTTScoreCrossLabel.Name = "TTTScoreCrossLabel";
+            this.TTTScoreCrossLabel.Size = new System.Drawing.Size(62, 25);
+            this.TTTScoreCrossLabel.TabIndex = 50;
+            this.TTTScoreCrossLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            this.label23.CausesValidation = false;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label23.Location = new System.Drawing.Point(992, 79);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(62, 20);
+            this.label23.TabIndex = 49;
+            this.label23.Text = "Kółko";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TTTScoreCircleLabel
+            // 
+            this.TTTScoreCircleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TTTScoreCircleLabel.CausesValidation = false;
+            this.TTTScoreCircleLabel.Location = new System.Drawing.Point(992, 103);
+            this.TTTScoreCircleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TTTScoreCircleLabel.Name = "TTTScoreCircleLabel";
+            this.TTTScoreCircleLabel.Size = new System.Drawing.Size(62, 25);
+            this.TTTScoreCircleLabel.TabIndex = 48;
+            this.TTTScoreCircleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TTTRevertMoveButton
+            // 
+            this.TTTRevertMoveButton.Location = new System.Drawing.Point(1135, 83);
+            this.TTTRevertMoveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TTTRevertMoveButton.Name = "TTTRevertMoveButton";
+            this.TTTRevertMoveButton.Size = new System.Drawing.Size(74, 26);
+            this.TTTRevertMoveButton.TabIndex = 47;
+            this.TTTRevertMoveButton.Text = "Cofnij";
+            this.TTTRevertMoveButton.UseVisualStyleBackColor = true;
+            this.TTTRevertMoveButton.Click += new System.EventHandler(this.TTTRevertMoveButton_Click);
+            // 
+            // TTTMissButton
+            // 
+            this.TTTMissButton.Location = new System.Drawing.Point(1135, 113);
+            this.TTTMissButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TTTMissButton.Name = "TTTMissButton";
+            this.TTTMissButton.Size = new System.Drawing.Size(74, 26);
+            this.TTTMissButton.TabIndex = 46;
+            this.TTTMissButton.Text = "Pudło";
+            this.TTTMissButton.UseVisualStyleBackColor = true;
+            this.TTTMissButton.Click += new System.EventHandler(this.TTTMissButton_Click);
             // 
             // TTTBoardPanel
             // 
@@ -176,8 +276,8 @@ namespace VikingAxeBoardProject
             this.TTTBoardPanel.Controls.Add(this.TTTBox6);
             this.TTTBoardPanel.Controls.Add(this.TTTBox5);
             this.TTTBoardPanel.Controls.Add(this.TTTBoardImage);
-            this.TTTBoardPanel.Location = new System.Drawing.Point(694, 142);
-            this.TTTBoardPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TTTBoardPanel.Location = new System.Drawing.Point(693, 149);
+            this.TTTBoardPanel.Margin = new System.Windows.Forms.Padding(2);
             this.TTTBoardPanel.Name = "TTTBoardPanel";
             this.TTTBoardPanel.Size = new System.Drawing.Size(533, 520);
             this.TTTBoardPanel.TabIndex = 45;
@@ -192,7 +292,7 @@ namespace VikingAxeBoardProject
             this.TTTgameOverPanel.Controls.Add(this.label19);
             this.TTTgameOverPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TTTgameOverPanel.Location = new System.Drawing.Point(84, 148);
-            this.TTTgameOverPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TTTgameOverPanel.Margin = new System.Windows.Forms.Padding(2);
             this.TTTgameOverPanel.Name = "TTTgameOverPanel";
             this.TTTgameOverPanel.Size = new System.Drawing.Size(364, 231);
             this.TTTgameOverPanel.TabIndex = 33;
@@ -201,7 +301,7 @@ namespace VikingAxeBoardProject
             // TTTgameOverExitButton
             // 
             this.TTTgameOverExitButton.Location = new System.Drawing.Point(146, 168);
-            this.TTTgameOverExitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TTTgameOverExitButton.Margin = new System.Windows.Forms.Padding(2);
             this.TTTgameOverExitButton.Name = "TTTgameOverExitButton";
             this.TTTgameOverExitButton.Size = new System.Drawing.Size(74, 26);
             this.TTTgameOverExitButton.TabIndex = 3;
@@ -391,8 +491,8 @@ namespace VikingAxeBoardProject
             // 
             // TTTNewGameButton
             // 
-            this.TTTNewGameButton.Location = new System.Drawing.Point(924, 77);
-            this.TTTNewGameButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TTTNewGameButton.Location = new System.Drawing.Point(1135, 23);
+            this.TTTNewGameButton.Margin = new System.Windows.Forms.Padding(2);
             this.TTTNewGameButton.Name = "TTTNewGameButton";
             this.TTTNewGameButton.Size = new System.Drawing.Size(74, 26);
             this.TTTNewGameButton.TabIndex = 4;
@@ -426,6 +526,8 @@ namespace VikingAxeBoardProject
             // playOneTab
             // 
             this.playOneTab.BackColor = System.Drawing.Color.White;
+            this.playOneTab.Controls.Add(this.revertMoveButton);
+            this.playOneTab.Controls.Add(this.missButton);
             this.playOneTab.Controls.Add(this.gameOverPanel);
             this.playOneTab.Controls.Add(this.allRoundsLabel);
             this.playOneTab.Controls.Add(this.label10);
@@ -436,30 +538,64 @@ namespace VikingAxeBoardProject
             this.playOneTab.Controls.Add(this.label9);
             this.playOneTab.Controls.Add(this.playBoardImage);
             this.playOneTab.Location = new System.Drawing.Point(4, 22);
-            this.playOneTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playOneTab.Margin = new System.Windows.Forms.Padding(2);
             this.playOneTab.Name = "playOneTab";
             this.playOneTab.Size = new System.Drawing.Size(1920, 1087);
             this.playOneTab.TabIndex = 6;
             this.playOneTab.Text = "Basic Game";
             // 
+            // revertMoveButton
+            // 
+            this.revertMoveButton.Location = new System.Drawing.Point(1114, 198);
+            this.revertMoveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.revertMoveButton.Name = "revertMoveButton";
+            this.revertMoveButton.Size = new System.Drawing.Size(74, 26);
+            this.revertMoveButton.TabIndex = 32;
+            this.revertMoveButton.Text = "Cofnij";
+            this.revertMoveButton.UseVisualStyleBackColor = true;
+            this.revertMoveButton.Click += new System.EventHandler(this.revertMoveButton_Click);
+            // 
+            // missButton
+            // 
+            this.missButton.Location = new System.Drawing.Point(1114, 228);
+            this.missButton.Margin = new System.Windows.Forms.Padding(2);
+            this.missButton.Name = "missButton";
+            this.missButton.Size = new System.Drawing.Size(74, 26);
+            this.missButton.TabIndex = 5;
+            this.missButton.Text = "Pudło";
+            this.missButton.UseVisualStyleBackColor = true;
+            this.missButton.Click += new System.EventHandler(this.missButton_Click);
+            // 
             // gameOverPanel
             // 
             this.gameOverPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gameOverPanel.Controls.Add(this.resetGameButton);
             this.gameOverPanel.Controls.Add(this.gameOverExitButton);
             this.gameOverPanel.Controls.Add(this.winnerLabel);
             this.gameOverPanel.Controls.Add(this.label12);
             this.gameOverPanel.Controls.Add(this.label8);
             this.gameOverPanel.Location = new System.Drawing.Point(786, 332);
-            this.gameOverPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gameOverPanel.Margin = new System.Windows.Forms.Padding(2);
             this.gameOverPanel.Name = "gameOverPanel";
             this.gameOverPanel.Size = new System.Drawing.Size(364, 231);
             this.gameOverPanel.TabIndex = 31;
             this.gameOverPanel.Visible = false;
             // 
+            // resetGameButton
+            // 
+            this.resetGameButton.Location = new System.Drawing.Point(88, 168);
+            this.resetGameButton.Margin = new System.Windows.Forms.Padding(2);
+            this.resetGameButton.Name = "resetGameButton";
+            this.resetGameButton.Size = new System.Drawing.Size(74, 26);
+            this.resetGameButton.TabIndex = 4;
+            this.resetGameButton.Text = "Od nowa";
+            this.resetGameButton.UseVisualStyleBackColor = true;
+            this.resetGameButton.Click += new System.EventHandler(this.resetGameButton_Click);
+            // 
             // gameOverExitButton
             // 
-            this.gameOverExitButton.Location = new System.Drawing.Point(146, 168);
-            this.gameOverExitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gameOverExitButton.Location = new System.Drawing.Point(190, 168);
+            this.gameOverExitButton.Margin = new System.Windows.Forms.Padding(2);
             this.gameOverExitButton.Name = "gameOverExitButton";
             this.gameOverExitButton.Size = new System.Drawing.Size(74, 26);
             this.gameOverExitButton.TabIndex = 3;
@@ -549,6 +685,8 @@ namespace VikingAxeBoardProject
             // 
             // scoreBoardGroupBox
             // 
+            this.scoreBoardGroupBox.Controls.Add(this.playerNameLabel5);
+            this.scoreBoardGroupBox.Controls.Add(this.playerPointsLabel5);
             this.scoreBoardGroupBox.Controls.Add(this.playerNameLabel4);
             this.scoreBoardGroupBox.Controls.Add(this.playerPointsLabel4);
             this.scoreBoardGroupBox.Controls.Add(this.playerNameLabel3);
@@ -560,10 +698,28 @@ namespace VikingAxeBoardProject
             this.scoreBoardGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreBoardGroupBox.Location = new System.Drawing.Point(827, 74);
             this.scoreBoardGroupBox.Name = "scoreBoardGroupBox";
-            this.scoreBoardGroupBox.Size = new System.Drawing.Size(260, 168);
+            this.scoreBoardGroupBox.Size = new System.Drawing.Size(260, 187);
             this.scoreBoardGroupBox.TabIndex = 26;
             this.scoreBoardGroupBox.TabStop = false;
             this.scoreBoardGroupBox.Text = "Tablica wyników";
+            // 
+            // playerNameLabel5
+            // 
+            this.playerNameLabel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.playerNameLabel5.Location = new System.Drawing.Point(72, 156);
+            this.playerNameLabel5.Name = "playerNameLabel5";
+            this.playerNameLabel5.Size = new System.Drawing.Size(169, 23);
+            this.playerNameLabel5.TabIndex = 9;
+            this.playerNameLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // playerPointsLabel5
+            // 
+            this.playerPointsLabel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.playerPointsLabel5.Location = new System.Drawing.Point(17, 156);
+            this.playerPointsLabel5.Name = "playerPointsLabel5";
+            this.playerPointsLabel5.Size = new System.Drawing.Size(40, 23);
+            this.playerPointsLabel5.TabIndex = 8;
+            this.playerPointsLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // playerNameLabel4
             // 
@@ -680,7 +836,7 @@ namespace VikingAxeBoardProject
             this.previewBoardTab.Controls.Add(this.dataLabel);
             this.previewBoardTab.Controls.Add(this.previewBoardImage);
             this.previewBoardTab.Location = new System.Drawing.Point(4, 22);
-            this.previewBoardTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.previewBoardTab.Margin = new System.Windows.Forms.Padding(2);
             this.previewBoardTab.Name = "previewBoardTab";
             this.previewBoardTab.Size = new System.Drawing.Size(1920, 1087);
             this.previewBoardTab.TabIndex = 5;
@@ -712,9 +868,9 @@ namespace VikingAxeBoardProject
             this.boardSettingsGroupBox.Controls.Add(this.widthBoardTextBox);
             this.boardSettingsGroupBox.Controls.Add(this.label15);
             this.boardSettingsGroupBox.Location = new System.Drawing.Point(10, 8);
-            this.boardSettingsGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boardSettingsGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.boardSettingsGroupBox.Name = "boardSettingsGroupBox";
-            this.boardSettingsGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boardSettingsGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.boardSettingsGroupBox.Size = new System.Drawing.Size(590, 318);
             this.boardSettingsGroupBox.TabIndex = 22;
             this.boardSettingsGroupBox.TabStop = false;
@@ -723,7 +879,7 @@ namespace VikingAxeBoardProject
             // maxRoundsTextBox
             // 
             this.maxRoundsTextBox.Location = new System.Drawing.Point(137, 203);
-            this.maxRoundsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maxRoundsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.maxRoundsTextBox.MaxLength = 4;
             this.maxRoundsTextBox.Name = "maxRoundsTextBox";
             this.maxRoundsTextBox.Size = new System.Drawing.Size(48, 20);
@@ -763,7 +919,7 @@ namespace VikingAxeBoardProject
             // maximalizeSettingsButton
             // 
             this.maximalizeSettingsButton.Location = new System.Drawing.Point(15, 23);
-            this.maximalizeSettingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maximalizeSettingsButton.Margin = new System.Windows.Forms.Padding(2);
             this.maximalizeSettingsButton.Name = "maximalizeSettingsButton";
             this.maximalizeSettingsButton.Size = new System.Drawing.Size(69, 23);
             this.maximalizeSettingsButton.TabIndex = 0;
@@ -783,7 +939,7 @@ namespace VikingAxeBoardProject
             "Green",
             "Gray"});
             this.colorBoardListBox.Location = new System.Drawing.Point(137, 171);
-            this.colorBoardListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.colorBoardListBox.Margin = new System.Windows.Forms.Padding(2);
             this.colorBoardListBox.Name = "colorBoardListBox";
             this.colorBoardListBox.Size = new System.Drawing.Size(82, 17);
             this.colorBoardListBox.TabIndex = 14;
@@ -801,7 +957,7 @@ namespace VikingAxeBoardProject
             // minimalizeSettingButton
             // 
             this.minimalizeSettingButton.Location = new System.Drawing.Point(420, 275);
-            this.minimalizeSettingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minimalizeSettingButton.Margin = new System.Windows.Forms.Padding(2);
             this.minimalizeSettingButton.Name = "minimalizeSettingButton";
             this.minimalizeSettingButton.Size = new System.Drawing.Size(76, 23);
             this.minimalizeSettingButton.TabIndex = 17;
@@ -812,7 +968,7 @@ namespace VikingAxeBoardProject
             // substractPositionYButton
             // 
             this.substractPositionYButton.Location = new System.Drawing.Point(239, 137);
-            this.substractPositionYButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.substractPositionYButton.Margin = new System.Windows.Forms.Padding(2);
             this.substractPositionYButton.Name = "substractPositionYButton";
             this.substractPositionYButton.Size = new System.Drawing.Size(33, 23);
             this.substractPositionYButton.TabIndex = 12;
@@ -823,7 +979,7 @@ namespace VikingAxeBoardProject
             // addPositionYButton
             // 
             this.addPositionYButton.Location = new System.Drawing.Point(202, 137);
-            this.addPositionYButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addPositionYButton.Margin = new System.Windows.Forms.Padding(2);
             this.addPositionYButton.Name = "addPositionYButton";
             this.addPositionYButton.Size = new System.Drawing.Size(33, 23);
             this.addPositionYButton.TabIndex = 11;
@@ -834,7 +990,7 @@ namespace VikingAxeBoardProject
             // substractPositionXButton
             // 
             this.substractPositionXButton.Location = new System.Drawing.Point(239, 105);
-            this.substractPositionXButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.substractPositionXButton.Margin = new System.Windows.Forms.Padding(2);
             this.substractPositionXButton.Name = "substractPositionXButton";
             this.substractPositionXButton.Size = new System.Drawing.Size(33, 23);
             this.substractPositionXButton.TabIndex = 8;
@@ -845,7 +1001,7 @@ namespace VikingAxeBoardProject
             // addPositionXButton
             // 
             this.addPositionXButton.Location = new System.Drawing.Point(202, 105);
-            this.addPositionXButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addPositionXButton.Margin = new System.Windows.Forms.Padding(2);
             this.addPositionXButton.Name = "addPositionXButton";
             this.addPositionXButton.Size = new System.Drawing.Size(33, 23);
             this.addPositionXButton.TabIndex = 7;
@@ -858,7 +1014,7 @@ namespace VikingAxeBoardProject
             this.littlePreviewImage.BackColor = System.Drawing.Color.Black;
             this.littlePreviewImage.Image = global::VikingAxeBoardProject.Properties.Resources.board;
             this.littlePreviewImage.Location = new System.Drawing.Point(382, 66);
-            this.littlePreviewImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.littlePreviewImage.Margin = new System.Windows.Forms.Padding(2);
             this.littlePreviewImage.Name = "littlePreviewImage";
             this.littlePreviewImage.Size = new System.Drawing.Size(147, 143);
             this.littlePreviewImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -868,7 +1024,7 @@ namespace VikingAxeBoardProject
             // PositionYBoardTextBox
             // 
             this.PositionYBoardTextBox.Location = new System.Drawing.Point(137, 140);
-            this.PositionYBoardTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PositionYBoardTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PositionYBoardTextBox.MaxLength = 4;
             this.PositionYBoardTextBox.Name = "PositionYBoardTextBox";
             this.PositionYBoardTextBox.Size = new System.Drawing.Size(48, 20);
@@ -888,7 +1044,7 @@ namespace VikingAxeBoardProject
             // PositionXBoardTextBox
             // 
             this.PositionXBoardTextBox.Location = new System.Drawing.Point(137, 107);
-            this.PositionXBoardTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PositionXBoardTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PositionXBoardTextBox.MaxLength = 4;
             this.PositionXBoardTextBox.Name = "PositionXBoardTextBox";
             this.PositionXBoardTextBox.Size = new System.Drawing.Size(48, 20);
@@ -908,7 +1064,7 @@ namespace VikingAxeBoardProject
             // saveBoardSettingsButton
             // 
             this.saveBoardSettingsButton.Location = new System.Drawing.Point(508, 275);
-            this.saveBoardSettingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveBoardSettingsButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveBoardSettingsButton.Name = "saveBoardSettingsButton";
             this.saveBoardSettingsButton.Size = new System.Drawing.Size(64, 23);
             this.saveBoardSettingsButton.TabIndex = 18;
@@ -929,7 +1085,7 @@ namespace VikingAxeBoardProject
             // heightBoardTextBox
             // 
             this.heightBoardTextBox.Location = new System.Drawing.Point(202, 76);
-            this.heightBoardTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.heightBoardTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.heightBoardTextBox.MaxLength = 4;
             this.heightBoardTextBox.Name = "heightBoardTextBox";
             this.heightBoardTextBox.Size = new System.Drawing.Size(48, 20);
@@ -939,7 +1095,7 @@ namespace VikingAxeBoardProject
             // widthBoardTextBox
             // 
             this.widthBoardTextBox.Location = new System.Drawing.Point(137, 76);
-            this.widthBoardTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.widthBoardTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.widthBoardTextBox.MaxLength = 4;
             this.widthBoardTextBox.Name = "widthBoardTextBox";
             this.widthBoardTextBox.Size = new System.Drawing.Size(48, 20);
@@ -981,6 +1137,8 @@ namespace VikingAxeBoardProject
             // playersTab
             // 
             this.playersTab.BackColor = System.Drawing.Color.White;
+            this.playersTab.Controls.Add(this.playerNameTextBox5);
+            this.playersTab.Controls.Add(this.label20);
             this.playersTab.Controls.Add(this.savePlayersButton);
             this.playersTab.Controls.Add(this.playerNameTextBox4);
             this.playersTab.Controls.Add(this.playerNameTextBox3);
@@ -992,17 +1150,36 @@ namespace VikingAxeBoardProject
             this.playersTab.Controls.Add(this.label3);
             this.playersTab.Controls.Add(this.label2);
             this.playersTab.Location = new System.Drawing.Point(4, 22);
-            this.playersTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playersTab.Margin = new System.Windows.Forms.Padding(2);
             this.playersTab.Name = "playersTab";
             this.playersTab.Size = new System.Drawing.Size(1920, 1087);
             this.playersTab.TabIndex = 3;
             this.playersTab.Text = "Players";
             // 
+            // playerNameTextBox5
+            // 
+            this.playerNameTextBox5.Location = new System.Drawing.Point(903, 535);
+            this.playerNameTextBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.playerNameTextBox5.Name = "playerNameTextBox5";
+            this.playerNameTextBox5.Size = new System.Drawing.Size(125, 20);
+            this.playerNameTextBox5.TabIndex = 8;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label20.Location = new System.Drawing.Point(829, 534);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(66, 17);
+            this.label20.TabIndex = 9;
+            this.label20.Text = "Gracz #5";
+            // 
             // savePlayersButton
             // 
             this.savePlayersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.savePlayersButton.Location = new System.Drawing.Point(885, 565);
-            this.savePlayersButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.savePlayersButton.Location = new System.Drawing.Point(885, 573);
+            this.savePlayersButton.Margin = new System.Windows.Forms.Padding(2);
             this.savePlayersButton.Name = "savePlayersButton";
             this.savePlayersButton.Size = new System.Drawing.Size(100, 45);
             this.savePlayersButton.TabIndex = 4;
@@ -1012,32 +1189,32 @@ namespace VikingAxeBoardProject
             // 
             // playerNameTextBox4
             // 
-            this.playerNameTextBox4.Location = new System.Drawing.Point(903, 524);
-            this.playerNameTextBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playerNameTextBox4.Location = new System.Drawing.Point(903, 508);
+            this.playerNameTextBox4.Margin = new System.Windows.Forms.Padding(2);
             this.playerNameTextBox4.Name = "playerNameTextBox4";
             this.playerNameTextBox4.Size = new System.Drawing.Size(125, 20);
             this.playerNameTextBox4.TabIndex = 3;
             // 
             // playerNameTextBox3
             // 
-            this.playerNameTextBox3.Location = new System.Drawing.Point(903, 497);
-            this.playerNameTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playerNameTextBox3.Location = new System.Drawing.Point(903, 481);
+            this.playerNameTextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.playerNameTextBox3.Name = "playerNameTextBox3";
             this.playerNameTextBox3.Size = new System.Drawing.Size(125, 20);
             this.playerNameTextBox3.TabIndex = 2;
             // 
             // playerNameTextBox2
             // 
-            this.playerNameTextBox2.Location = new System.Drawing.Point(903, 469);
-            this.playerNameTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playerNameTextBox2.Location = new System.Drawing.Point(903, 453);
+            this.playerNameTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.playerNameTextBox2.Name = "playerNameTextBox2";
             this.playerNameTextBox2.Size = new System.Drawing.Size(125, 20);
             this.playerNameTextBox2.TabIndex = 1;
             // 
             // playerNameTextBox1
             // 
-            this.playerNameTextBox1.Location = new System.Drawing.Point(903, 443);
-            this.playerNameTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playerNameTextBox1.Location = new System.Drawing.Point(903, 427);
+            this.playerNameTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.playerNameTextBox1.Name = "playerNameTextBox1";
             this.playerNameTextBox1.Size = new System.Drawing.Size(125, 20);
             this.playerNameTextBox1.TabIndex = 0;
@@ -1046,7 +1223,7 @@ namespace VikingAxeBoardProject
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(829, 524);
+            this.label6.Location = new System.Drawing.Point(829, 508);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 17);
@@ -1057,7 +1234,7 @@ namespace VikingAxeBoardProject
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(829, 468);
+            this.label5.Location = new System.Drawing.Point(829, 452);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
@@ -1068,7 +1245,7 @@ namespace VikingAxeBoardProject
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(829, 496);
+            this.label4.Location = new System.Drawing.Point(829, 480);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 17);
@@ -1079,7 +1256,7 @@ namespace VikingAxeBoardProject
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(829, 442);
+            this.label3.Location = new System.Drawing.Point(829, 426);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 17);
@@ -1090,7 +1267,7 @@ namespace VikingAxeBoardProject
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(903, 406);
+            this.label2.Location = new System.Drawing.Point(903, 390);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
@@ -1103,9 +1280,9 @@ namespace VikingAxeBoardProject
             this.settingsTab.Controls.Add(this.boardCalibrationButton);
             this.settingsTab.Controls.Add(this.playersSettingButton);
             this.settingsTab.Location = new System.Drawing.Point(4, 22);
-            this.settingsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.settingsTab.Margin = new System.Windows.Forms.Padding(2);
             this.settingsTab.Name = "settingsTab";
-            this.settingsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.settingsTab.Padding = new System.Windows.Forms.Padding(2);
             this.settingsTab.Size = new System.Drawing.Size(1920, 1087);
             this.settingsTab.TabIndex = 1;
             this.settingsTab.Text = "Settings";
@@ -1126,7 +1303,7 @@ namespace VikingAxeBoardProject
             // 
             this.boardCalibrationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.boardCalibrationButton.Location = new System.Drawing.Point(885, 515);
-            this.boardCalibrationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boardCalibrationButton.Margin = new System.Windows.Forms.Padding(2);
             this.boardCalibrationButton.Name = "boardCalibrationButton";
             this.boardCalibrationButton.Size = new System.Drawing.Size(100, 45);
             this.boardCalibrationButton.TabIndex = 1;
@@ -1138,7 +1315,7 @@ namespace VikingAxeBoardProject
             // 
             this.playersSettingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.playersSettingButton.Location = new System.Drawing.Point(885, 466);
-            this.playersSettingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playersSettingButton.Margin = new System.Windows.Forms.Padding(2);
             this.playersSettingButton.Name = "playersSettingButton";
             this.playersSettingButton.Size = new System.Drawing.Size(100, 45);
             this.playersSettingButton.TabIndex = 0;
@@ -1151,9 +1328,9 @@ namespace VikingAxeBoardProject
             this.playTab.Controls.Add(this.gameTwoButton);
             this.playTab.Controls.Add(this.gameOneButton);
             this.playTab.Location = new System.Drawing.Point(4, 22);
-            this.playTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playTab.Margin = new System.Windows.Forms.Padding(2);
             this.playTab.Name = "playTab";
-            this.playTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playTab.Padding = new System.Windows.Forms.Padding(2);
             this.playTab.Size = new System.Drawing.Size(1920, 1087);
             this.playTab.TabIndex = 0;
             this.playTab.Text = "Play";
@@ -1163,7 +1340,7 @@ namespace VikingAxeBoardProject
             // 
             this.gameTwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.gameTwoButton.Location = new System.Drawing.Point(885, 512);
-            this.gameTwoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gameTwoButton.Margin = new System.Windows.Forms.Padding(2);
             this.gameTwoButton.Name = "gameTwoButton";
             this.gameTwoButton.Size = new System.Drawing.Size(100, 45);
             this.gameTwoButton.TabIndex = 6;
@@ -1175,7 +1352,7 @@ namespace VikingAxeBoardProject
             // 
             this.gameOneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.gameOneButton.Location = new System.Drawing.Point(885, 463);
-            this.gameOneButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gameOneButton.Margin = new System.Windows.Forms.Padding(2);
             this.gameOneButton.Name = "gameOneButton";
             this.gameOneButton.Size = new System.Drawing.Size(100, 45);
             this.gameOneButton.TabIndex = 5;
@@ -1189,7 +1366,7 @@ namespace VikingAxeBoardProject
             this.mainTab.Controls.Add(this.exitButton);
             this.mainTab.Controls.Add(this.settingsButton);
             this.mainTab.Location = new System.Drawing.Point(4, 22);
-            this.mainTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainTab.Margin = new System.Windows.Forms.Padding(2);
             this.mainTab.Name = "mainTab";
             this.mainTab.Size = new System.Drawing.Size(1920, 1087);
             this.mainTab.TabIndex = 2;
@@ -1200,7 +1377,7 @@ namespace VikingAxeBoardProject
             // 
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.startButton.Location = new System.Drawing.Point(885, 463);
-            this.startButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startButton.Margin = new System.Windows.Forms.Padding(2);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(100, 45);
             this.startButton.TabIndex = 4;
@@ -1212,7 +1389,7 @@ namespace VikingAxeBoardProject
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.exitButton.Location = new System.Drawing.Point(885, 561);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.exitButton.Size = new System.Drawing.Size(100, 45);
@@ -1225,7 +1402,7 @@ namespace VikingAxeBoardProject
             // 
             this.settingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.settingsButton.Location = new System.Drawing.Point(885, 512);
-            this.settingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(2);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(100, 45);
             this.settingsButton.TabIndex = 5;
@@ -1242,8 +1419,8 @@ namespace VikingAxeBoardProject
             this.tabsControl.Controls.Add(this.previewBoardTab);
             this.tabsControl.Controls.Add(this.playOneTab);
             this.tabsControl.Controls.Add(this.playTwoTab);
-            this.tabsControl.Location = new System.Drawing.Point(-8, -33);
-            this.tabsControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabsControl.Location = new System.Drawing.Point(3, 1);
+            this.tabsControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabsControl.Name = "tabsControl";
             this.tabsControl.SelectedIndex = 0;
             this.tabsControl.Size = new System.Drawing.Size(1928, 1113);
@@ -1258,7 +1435,7 @@ namespace VikingAxeBoardProject
             this.Controls.Add(this.tabsControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VikingAxeProject";
             this.Text = "Viking Axe Board";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VikingAxeProject_KeyDown);
@@ -1388,6 +1565,20 @@ namespace VikingAxeBoardProject
         private System.Windows.Forms.Panel TTTBoardPanel;
         private System.Windows.Forms.TextBox maxRoundsTextBox;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox playerNameTextBox5;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label playerNameLabel5;
+        private System.Windows.Forms.Label playerPointsLabel5;
+        private System.Windows.Forms.Button resetGameButton;
+        private System.Windows.Forms.Button missButton;
+        private System.Windows.Forms.Button revertMoveButton;
+        private System.Windows.Forms.Button TTTRevertMoveButton;
+        private System.Windows.Forms.Button TTTMissButton;
+        private System.Windows.Forms.Button TTTNextRoundButton;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label TTTScoreCrossLabel;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label TTTScoreCircleLabel;
     }
 }
 

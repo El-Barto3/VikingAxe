@@ -8,3 +8,23 @@ D:\programowanie\C#\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\Vikin
 D:\programowanie\C#\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.csproj.CoreCompileInputs.cache
 D:\programowanie\C#\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.exe
 D:\programowanie\C#\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.pdb
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\bin\Debug\VikingAxeBoardProject.exe.config
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\bin\Debug\VikingAxeBoardProject.exe
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\bin\Debug\VikingAxeBoardProject.pdb
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.csproj.AssemblyReference.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.VikingAxeProject.resources
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.Properties.Resources.resources
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.csproj.GenerateResource.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.csproj.CoreCompileInputs.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.exe
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v1.0\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.pdb
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\bin\Debug\VikingAxeBoardProject.exe.config
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\bin\Debug\VikingAxeBoardProject.exe
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\bin\Debug\VikingAxeBoardProject.pdb
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.csproj.AssemblyReference.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.VikingAxeProject.resources
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.Properties.Resources.resources
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.csproj.GenerateResource.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.csproj.CoreCompileInputs.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.exe
+D:\projekty\Viking Axe\VikingAxeBoardSolution\VikingAxeBoardProject\obj\Debug\VikingAxeBoardProject.pdb
