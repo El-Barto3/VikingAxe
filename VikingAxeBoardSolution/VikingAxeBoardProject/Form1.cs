@@ -285,9 +285,19 @@ namespace VikingAxeBoardProject
                 updateSavedProperties();
                 firstLoad = false;
             }
+
+
             boardPositionX = int.Parse(PositionXBoardTextBox.Text);
             boardPositionY = int.Parse(PositionYBoardTextBox.Text);
-            
+
+
+            if (textboxIsPosInteger(maxRoundsTextBox))
+                rounds = int.Parse(maxRoundsTextBox.Text);
+
+            TTTAllRoundsLabel.Text = rounds.ToString();
+
+            if (currentRound <= rounds)
+                currentRoundLabel.Text = currentRound.ToString();
 
             Point location = new Point(boardPositionX, boardPositionY);
             //panel.Location = location;
@@ -317,6 +327,10 @@ namespace VikingAxeBoardProject
         }
         private void uploadTTTBoard()
         {
+            TTTScoreCircleLabel.Text = TTTCirclePoints.ToString();
+            TTTScoreCrossLabel.Text = TTTCrossPoints.ToString();
+            TTTCurrentRoundLabel.Text = currentRound.ToString();
+
             for (int i = 0; i < boxesValue.Length; i++)
             {
                 string name = "TTTBox" + (i+1);
@@ -337,6 +351,7 @@ namespace VikingAxeBoardProject
         {
             TTTgameOverPanel.Visible = false;
             TTTplayerTurnCross = true;
+
             for (int i = 0; i < boxesValue.Length; i++)
             {
                 boxesValue[i] = 0;
@@ -344,11 +359,19 @@ namespace VikingAxeBoardProject
 
             uploadTTTBoard();
             uploadTTTPlayer();
+            updateTTTBoardLook(TTTBoardPanel);
         }
         private void startGameTwo()
         {
             tabsControl.SelectedTab = playTwoTab;
+
             resetTTTGame();
+            currentRound = 1;
+            TTTCrossPoints = 0;
+            TTTCirclePoints = 0;
+
+            uploadTTTBoard();
+            uploadTTTPlayer();
             updateTTTBoardLook(TTTBoardPanel);
         }
 
@@ -613,14 +636,34 @@ namespace VikingAxeBoardProject
             }
             uploadTTTBoard();
             uploadTTTPlayer();
+
             if(checkIfWin())
             {
                 if (TTTplayerTurnCross)
+                {
                     TTTWinnerLabel.Text = "Kółko";
+                    TTTCirclePoints += 1;
+                }
                 else
+                {
                     TTTWinnerLabel.Text = "Krzyżyk";
+                    TTTCrossPoints += 1;
+                }
 
-                TTTgameOverPanel.Visible = true;
+
+                resetTTTGame();
+                uploadTTTBoard();
+                updateTTTBoardLook(TTTBoardPanel);
+
+                if (TTTCrossPoints > rounds / 2 || TTTCirclePoints > rounds / 2)
+                    TTTgameOverPanel.Visible = true;
+                else
+                    if(currentRound+1<= rounds)
+                        currentRound++;
+                    else
+                        TTTgameOverPanel.Visible = true;
+
+
             }
 
         }
@@ -692,13 +735,19 @@ namespace VikingAxeBoardProject
             tabsControl.SelectedTab = mainTab;
         }
 
+        int TTTCrossPoints = 0;
+        int TTTCirclePoints = 0;
         private void TTTNewGameButton_Click(object sender, EventArgs e)
         {
             resetTTTGame();
+            currentRound = 1;
+            TTTCrossPoints = 0;
+            TTTCirclePoints = 0;
         }
         private void TTTNextRoundButton_Click(object sender, EventArgs e)
         {
-
+            currentRound += 1;
+            resetTTTGame();
         }
 
 

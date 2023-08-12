@@ -135,6 +135,10 @@ namespace VikingAxeBoardProject
             this.exitButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
             this.tabsControl = new System.Windows.Forms.TabControl();
+            this.TTTAllRoundsLabel = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.TTTCurrentRoundLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.playTwoTab.SuspendLayout();
             this.TTTBoardPanel.SuspendLayout();
             this.TTTgameOverPanel.SuspendLayout();
@@ -165,6 +169,10 @@ namespace VikingAxeBoardProject
             // 
             // playTwoTab
             // 
+            this.playTwoTab.Controls.Add(this.TTTAllRoundsLabel);
+            this.playTwoTab.Controls.Add(this.label25);
+            this.playTwoTab.Controls.Add(this.TTTCurrentRoundLabel);
+            this.playTwoTab.Controls.Add(this.label27);
             this.playTwoTab.Controls.Add(this.TTTNextRoundButton);
             this.playTwoTab.Controls.Add(this.label24);
             this.playTwoTab.Controls.Add(this.TTTScoreCrossLabel);
@@ -504,7 +512,7 @@ namespace VikingAxeBoardProject
             // 
             this.TTTplayerTurnLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TTTplayerTurnLabel.CausesValidation = false;
-            this.TTTplayerTurnLabel.Location = new System.Drawing.Point(898, 37);
+            this.TTTplayerTurnLabel.Location = new System.Drawing.Point(898, 23);
             this.TTTplayerTurnLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TTTplayerTurnLabel.Name = "TTTplayerTurnLabel";
             this.TTTplayerTurnLabel.Size = new System.Drawing.Size(165, 24);
@@ -515,7 +523,7 @@ namespace VikingAxeBoardProject
             // 
             this.label21.CausesValidation = false;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.Location = new System.Drawing.Point(830, 39);
+            this.label21.Location = new System.Drawing.Point(830, 25);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(56, 20);
@@ -1426,6 +1434,54 @@ namespace VikingAxeBoardProject
             this.tabsControl.Size = new System.Drawing.Size(1928, 1113);
             this.tabsControl.TabIndex = 4;
             // 
+            // TTTAllRoundsLabel
+            // 
+            this.TTTAllRoundsLabel.CausesValidation = false;
+            this.TTTAllRoundsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TTTAllRoundsLabel.Location = new System.Drawing.Point(951, 57);
+            this.TTTAllRoundsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TTTAllRoundsLabel.Name = "TTTAllRoundsLabel";
+            this.TTTAllRoundsLabel.Size = new System.Drawing.Size(27, 18);
+            this.TTTAllRoundsLabel.TabIndex = 56;
+            this.TTTAllRoundsLabel.Text = "10";
+            this.TTTAllRoundsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            this.label25.CausesValidation = false;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label25.Location = new System.Drawing.Point(934, 48);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(13, 36);
+            this.label25.TabIndex = 55;
+            this.label25.Text = "/";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TTTCurrentRoundLabel
+            // 
+            this.TTTCurrentRoundLabel.CausesValidation = false;
+            this.TTTCurrentRoundLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TTTCurrentRoundLabel.Location = new System.Drawing.Point(901, 57);
+            this.TTTCurrentRoundLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TTTCurrentRoundLabel.Name = "TTTCurrentRoundLabel";
+            this.TTTCurrentRoundLabel.Size = new System.Drawing.Size(27, 18);
+            this.TTTCurrentRoundLabel.TabIndex = 54;
+            this.TTTCurrentRoundLabel.Text = "1";
+            this.TTTCurrentRoundLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.CausesValidation = false;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label27.Location = new System.Drawing.Point(829, 52);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(57, 28);
+            this.label27.TabIndex = 53;
+            this.label27.Text = "Runda:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // VikingAxeProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1579,6 +1635,10 @@ namespace VikingAxeBoardProject
         private System.Windows.Forms.Label TTTScoreCrossLabel;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label TTTScoreCircleLabel;
+        private System.Windows.Forms.Label TTTAllRoundsLabel;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label TTTCurrentRoundLabel;
+        private System.Windows.Forms.Label label27;
     }
 }
 
