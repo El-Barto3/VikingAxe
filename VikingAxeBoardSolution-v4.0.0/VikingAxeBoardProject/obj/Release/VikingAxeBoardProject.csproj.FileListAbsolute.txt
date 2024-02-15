@@ -1,0 +1,13 @@
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\bin\Release\VikingAxeBoardProject.exe.config
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\bin\Release\VikingAxeBoardProject.exe
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\bin\Release\VikingAxeBoardProject.pdb
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\bin\Release\en\VikingAxeBoardProject.resources.dll
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\VikingAxeBoardProject.csproj.AssemblyReference.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\VikingAxeBoardProject.VikingAxeProjectForm.resources
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\VikingAxeBoardProject.Properties.Resources.resources
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\VikingAxeBoardProject.VikingAxeProjectForm.en.resources
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\VikingAxeBoardProject.csproj.GenerateResource.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\VikingAxeBoardProject.csproj.CoreCompileInputs.cache
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\en\VikingAxeBoardProject.resources.dll
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\VikingAxeBoardProject.exe
+D:\projekty\Viking Axe\VikingAxeBoardSolution-v3.1.0-walentynki\VikingAxeBoardProject\obj\Release\VikingAxeBoardProject.pdb
